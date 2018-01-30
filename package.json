@@ -14,7 +14,8 @@
     "eslint-config-prettier": "^2.9.0",
     "husky": "^0.15.0-rc.3",
     "lint-staged": "^6.1.0",
-    "prettier": "1.10.2"
+    "prettier": "1.10.2",
+    "stylelint": "^8.4.0"
   },
   "config": {
     "commitizen": {
@@ -29,6 +30,7 @@
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "prettier --write", "git add"],
+    "*.css": ["stylelint --fix", "prettier --write", "git add"],
     "*.{json,md}": ["prettier --write", "git add"]
   },
   "prettier": {
@@ -36,5 +38,8 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "arrowParens": "always"
+  },
+  "stylelint": {
+    "extends": ["stylelint-config-standard"]
   }
 }
